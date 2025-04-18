@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Heart, ShoppingBag, Menu, X } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Link } from 'react-router-dom';
@@ -8,27 +8,27 @@ const sections = [
   {
     id: 1,
     title: "NEW ARRIVALS",
-    backgroundImage: "/src/dskjnknjdas.png",
+    backgroundImage: "/triangl-website/dskjnknjdas.png",
   },
   {
     id: 2,
     title: "BEST SELLERS",
-    backgroundImage: "/src/dskjnknjdas.png",
+    backgroundImage: "/triangl-website/dskjnknjdas.png",
   },
   {
     id: 3,
     title: "SWIMWEAR",
-    backgroundImage: "/src/dskjnknjdas.png",
+    backgroundImage: "/triangl-website/dskjnknjdas.png",
   },
   {
     id: 4,
     title: "CLOTHING",
-    backgroundImage: "/src/dskjnknjdas.png",
+    backgroundImage: "/triangl-website/dskjnknjdas.png",
   },
   {
     id: 5,
     title: "FOR HIM",
-    backgroundImage: "/src/dskjnknjdas.png",
+    backgroundImage: "/triangl-website/dskjnknjdas.png",
   },
 ];
 
@@ -74,7 +74,7 @@ export const HomePage = (): JSX.Element => {
           {/* Center logo */}
           <div className="absolute left-1/2 transform -translate-x-1/2">
             <Link to="/">
-              <img src="/white logo.png" alt="TRIANGL" className="h-6" />
+              <img src="/triangl-website/white logo.png" alt="TRIANGL" className="h-6" />
             </Link>
           </div>
 

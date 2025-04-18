@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Heart, ChevronDown, Menu, X, ChevronLeft, ChevronRight, Play } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Link } from 'react-router-dom';
@@ -14,18 +14,17 @@ export const ProductPage = (): JSX.Element => {
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
   const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
 
   const sizes = ['XXS', 'XS', 'S', 'M', 'L', 'XL'];
   
   // Example media array with both images and video
   const mediaItems: MediaItem[] = [
-    { type: 'video', url: '/vid.mp4', thumbnail: '/ss1.png' },
-    { type: 'image', url: '/ss1.png' },
-    { type: 'image', url: '/ss2.png' },
-    { type: 'image', url: '/ss3.png' },
-    { type: 'image', url: '/ss1.png' },
-    { type: 'image', url: '/ss2.png' },
+    { type: 'video', url: '/triangl-website/vid.mp4', thumbnail: '/triangl-website/ss1.png' },
+    { type: 'image', url: '/triangl-website/ss1.png' },
+    { type: 'image', url: '/triangl-website/ss2.png' },
+    { type: 'image', url: '/triangl-website/ss3.png' },
+    { type: 'image', url: '/triangl-website/ss1.png' },
+    { type: 'image', url: '/triangl-website/ss2.png' },
   ];
 
   // Navigation items
@@ -44,16 +43,10 @@ export const ProductPage = (): JSX.Element => {
 
   const nextMedia = () => {
     setCurrentMediaIndex((prev) => (prev + 1) % mediaItems.length);
-    setIsPlaying(false);
   };
 
   const prevMedia = () => {
     setCurrentMediaIndex((prev) => (prev - 1 + mediaItems.length) % mediaItems.length);
-    setIsPlaying(false);
-  };
-
-  const togglePlay = () => {
-    setIsPlaying(!isPlaying);
   };
 
   return (
@@ -85,7 +78,7 @@ export const ProductPage = (): JSX.Element => {
           {/* Center logo */}
           <div className="absolute left-1/2 transform -translate-x-1/2">
             <Link to="/">
-              <img src="/black logo.png" alt="TRIANGL" className="h-6" />
+              <img src="/triangl-website/black logo.png" alt="TRIANGL" className="h-6" />
             </Link>
           </div>
 
@@ -143,7 +136,6 @@ export const ProductPage = (): JSX.Element => {
                 }
                 onClick={() => {
                   setCurrentMediaIndex(index);
-                  setIsPlaying(false);
                 }}
               >
                 {item.type === 'video' ? (
