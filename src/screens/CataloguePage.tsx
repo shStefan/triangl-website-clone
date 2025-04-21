@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Heart, ShoppingBag, Menu, X } from 'lucide-react';
+import { getAssetPath } from '../utils/assetPath';
 import {
   Pagination,
   PaginationContent,
@@ -23,9 +24,9 @@ const navItems = [
 
 // Product data
 const productImages = [
-  "/triangl-website/ss1.png",
-  "/triangl-website/ss2.png",
-  "/triangl-website/vid.mp4",  // Every third item will be the video
+  getAssetPath("/ss1.png"),
+  getAssetPath("/ss2.png"),
+  getAssetPath("/vid.mp4"),  // Every third item will be the video
 ];
 
 const products = Array(12).fill(null).map((_, index) => ({
@@ -35,15 +36,15 @@ const products = Array(12).fill(null).map((_, index) => ({
   isVideo: index % 3 === 2  // Every third item will be a video
 }));
 
+// Category data
+const categories = [
+  { name: "Sets", image: getAssetPath("/Sets.png") },
+  { name: "Separates", image: getAssetPath("/Separates.png") },
+  { name: "One piece", image: getAssetPath("/onepiece.png") },
+];
+
 export const CataloguePage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  // Category data for the top section
-  const categories = [
-    { name: "Sets", image: "/triangl-website/Sets.png" },
-    { name: "Separates", image: "/triangl-website/Separates.png" },
-    { name: "One piece", image: "/triangl-website/onepiece.png" },
-  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -75,7 +76,7 @@ export const CataloguePage = () => {
               {/* Center logo */}
               <div className="absolute left-1/2 transform -translate-x-1/2">
                 <Link to="/">
-                  <img src="/triangl-website/black logo.png" alt="TRIANGL" className="h-6" />
+                  <img src={getAssetPath("/black logo.png")} alt="TRIANGL" className="h-6" />
                 </Link>
               </div>
 

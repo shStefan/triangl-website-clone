@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Heart, ChevronDown, Menu, X, ChevronLeft, ChevronRight, Play } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Link } from 'react-router-dom';
+import { getAssetPath } from '../utils/assetPath';
 
 interface MediaItem {
   type: 'image' | 'video';
@@ -19,12 +20,12 @@ export const ProductPage = (): JSX.Element => {
   
   // Example media array with both images and video
   const mediaItems: MediaItem[] = [
-    { type: 'video', url: '/triangl-website/vid.mp4', thumbnail: '/triangl-website/ss1.png' },
-    { type: 'image', url: '/triangl-website/ss1.png' },
-    { type: 'image', url: '/triangl-website/ss2.png' },
-    { type: 'image', url: '/triangl-website/ss3.png' },
-    { type: 'image', url: '/triangl-website/ss1.png' },
-    { type: 'image', url: '/triangl-website/ss2.png' },
+    { type: 'video', url: getAssetPath('/vid.mp4'), thumbnail: getAssetPath('/ss1.png') },
+    { type: 'image', url: getAssetPath('/ss1.png') },
+    { type: 'image', url: getAssetPath('/ss2.png') },
+    { type: 'image', url: getAssetPath('/ss3.png') },
+    { type: 'image', url: getAssetPath('/ss1.png') },
+    { type: 'image', url: getAssetPath('/ss2.png') },
   ];
 
   // Navigation items
@@ -78,7 +79,7 @@ export const ProductPage = (): JSX.Element => {
           {/* Center logo */}
           <div className="absolute left-1/2 transform -translate-x-1/2">
             <Link to="/">
-              <img src="/triangl-website/black logo.png" alt="TRIANGL" className="h-6" />
+              <img src={getAssetPath("/black logo.png")} alt="TRIANGL" className="h-6" />
             </Link>
           </div>
 
