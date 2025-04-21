@@ -1,35 +1,34 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Heart, ShoppingBag, Menu, X } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Link } from 'react-router-dom';
-import { getAssetPath } from '../utils/assetPath';
 
 // Define data for sections to enable mapping
 const sections = [
   {
     id: 1,
     title: "NEW ARRIVALS",
-    backgroundImage: getAssetPath("/dskjnknjdas.png"),
+    backgroundImage: "/src/dskjnknjdas.png",
   },
   {
     id: 2,
     title: "BEST SELLERS",
-    backgroundImage: getAssetPath("/dskjnknjdas.png"),
+    backgroundImage: "/src/dskjnknjdas.png",
   },
   {
     id: 3,
     title: "SWIMWEAR",
-    backgroundImage: getAssetPath("/dskjnknjdas.png"),
+    backgroundImage: "/src/dskjnknjdas.png",
   },
   {
     id: 4,
     title: "CLOTHING",
-    backgroundImage: getAssetPath("/dskjnknjdas.png"),
+    backgroundImage: "/src/dskjnknjdas.png",
   },
   {
     id: 5,
     title: "FOR HIM",
-    backgroundImage: getAssetPath("/dskjnknjdas.png"),
+    backgroundImage: "/src/dskjnknjdas.png",
   },
 ];
 
@@ -75,7 +74,7 @@ export const HomePage = (): JSX.Element => {
           {/* Center logo */}
           <div className="absolute left-1/2 transform -translate-x-1/2">
             <Link to="/">
-              <img src={getAssetPath("/white logo.png")} alt="TRIANGL" className="h-6" />
+              <img src="/white logo.png" alt="TRIANGL" className="h-6" />
             </Link>
           </div>
 
